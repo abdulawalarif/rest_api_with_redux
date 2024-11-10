@@ -1,28 +1,29 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart'show immutable, Uint8List;
 
 @immutable
-class PhotosModel {
+class AlbumModel {
   final int albumId;
   final int id;
   final String title;
-  final String url;
+  final Uint8List url;
   final Uint8List thumbnailUrl;
   final bool isLoading;
 
-  PhotosModel copiedWith([
+  AlbumModel copiedWith([
     bool? isLoading,
+    Uint8List? url,
     Uint8List? thumbnailUrl,
   ]) =>
-      PhotosModel(
+      AlbumModel(
         albumId: albumId,
         id: id,
         title: title,
-        url: url,
+        url: url??this.url,
         thumbnailUrl: thumbnailUrl ?? this.thumbnailUrl,
         isLoading: isLoading ?? this.isLoading,
       );
 
-  const PhotosModel({
+  const AlbumModel({
     required this.albumId,
     required this.id,
     required this.title,
@@ -31,11 +32,11 @@ class PhotosModel {
     required this.isLoading,
   });
 
-  PhotosModel.fromJson(Map<String, dynamic> json)
+  AlbumModel.fromJson(Map<String, dynamic> json)
       : albumId = json['albumId'] as int,
         id = json['id'] as int,
         title = json['title'] as String,
-        url = json['url'] as String,
+        url = json['url'] as Uint8List,
         thumbnailUrl = json['thumbnailUrl'] as Uint8List,
         isLoading = false;
 

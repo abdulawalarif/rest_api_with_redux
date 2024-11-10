@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(
     MaterialApp(
@@ -14,14 +13,18 @@ void main() {
   );
 }
 
+const apiUrl = 'https://jsonplaceholder.typicode.com/photos';
 
+ 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Hello world'),),
+      body: Center(
+        child: Text('Hello world'),
+      ),
     );
   }
 }
