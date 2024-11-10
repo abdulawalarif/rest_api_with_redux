@@ -8,6 +8,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  flutter_redux: ^0.10.0
+  redux: ^5.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
